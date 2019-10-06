@@ -1,33 +1,14 @@
 # Guestbook Example for OpenShift / Minishift
 
-The guestbook example shows how to build a simple multi-tier web application using
-Kubernetes and Docker. The application consists of a web front end, Redis
-master for storage, and replicated set of Redis slaves, all for which we will
-create Kubernetes deployments, pods, and services.
+The guestbook example shows how to build a simple multi-tier web application using Kubernetes and Docker. The application consists of a web front end, Redis master for storage, and replicated set of Redis slaves, all for which we will create Kubernetes deployments, pods, and services.
 
-There are two versions of this application. Version 1 (in the `v1` directory)
-is the example application itself, while version 2 (in the `v2` directory)
-extends the application by adding additional features that leverage the Watson
-Tone Analyzer service. The `v1` directory has a `README.md` file if you are interested
-in exploring the base example on your own with a Kubernetes cluster
+There are two versions of this application. Version 1 (in the `v1` directory) is the example application itself, while version 2 (in the `v2` directory) extends the application by adding additional features that leverage the Watson Tone Analyzer service. The `v1` directory has a `README.md` file if you are interested in exploring the base example on your own with a Kubernetes cluster.
 
-The `v2` directory contains the application version that will be the focus for
-the rest of this hands-on guide. In this guide, you will see how to install and
-configure a local copy of Minishift, an open source version of the OpenShift container
-platform that is optimized for smaller size and development use cases.
+The `v2` directory contains the application version that will be the focus for the rest of this hands-on guide. In this guide, you will see how to install and configure a local copy of [Minishift](https://docs.okd.io/latest/minishift/), an open source version of the OpenShift container platform that is optimized for smaller size and development use cases.
 
-You will add to this cluster support for the [Operator Framework](https://github.com/operator-framework/)
-and the IBM Cloud operator. Using the IBM Cloud operator, you will be able to create an
-instance of the Watson Tone Analyzer service and configure a Kubernetes secret in the
-cluster.
+You will add to this cluster support for the [Operator Framework](https://github.com/operator-framework/) and the IBM Cloud operator. Using the IBM Cloud operator, you will be able to create an instance of the Watson Tone Analyzer service and configure a Kubernetes secret in the cluster.
 
-With the credentials for the Tone Analyzer service added to the cluster, you will
-then be able to create the enhanced guestbook application on your Minishift cluster.
-This application can also be deployed to an existing OpenShift 3.9 or higher cluster by
-skipping the Minishift cluster setup steps. The application, including IBM Cloud operator
-may also be deployed on an OpenShift 4.x cluster by skipping the Minishift cluster setup and
-the OLM / operator marketplace setup steps (support for operator marketplace ships in
-OpenShift 4.x).
+With the credentials for the Tone Analyzer service added to the cluster, you will then be able to create the enhanced guestbook application on your Minishift cluster. This application can also be deployed to an existing OpenShift 3.9 or higher cluster by skipping the Minishift cluster setup steps. The application, including IBM Cloud operator may also be deployed on an OpenShift 4.x cluster by skipping the Minishift cluster setup and the OLM / operator marketplace setup steps (support for operator marketplace ships in OpenShift 4.x).
 
 ## Prerequisites
 
