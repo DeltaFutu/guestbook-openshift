@@ -24,11 +24,17 @@ spec:
             memory: 100Mi
         env:
         - name: VCAP_SERVICES_TONE_ANALYZER_API_KEY
-          value: YOUR_API_KEY
+          valueFrom:
+            secretKeyRef: 
+              name: binding-tone
+              key: apikey
         - name : VCAP_SERVICES_TONE_ANALYZER_TOKEN_ADDRESS
           value: "https://iam.bluemix.net/identity/token"
         - name: VCAP_SERVICES_TONE_ANALYZER_SERVICE_API
-          value: YOUR_URL
+          valueFrom:
+            secretKeyRef: 
+              name: binding-tone
+              key: url
         ports:
         - containerPort: 5000
           name: http

@@ -19,7 +19,13 @@ spec:
     spec:
       containers:
       - name: redis-slave
-        image: ibmcom/guestbook-redis-slave:v2
+        image: clouddragons/redis-slave:v1
         ports:
         - name: redis-server
           containerPort: 6379
+        volumeMounts:
+        - name: redis-storage
+          mountPath: /data
+      volumes:
+      - name: redis-storage
+        emptyDir: {}

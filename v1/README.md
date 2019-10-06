@@ -1,18 +1,18 @@
-## Guestbook Example
+# Guestbook Example
 
 This example shows how to build a simple multi-tier web application using Kubernetes and Docker. The application consists of a web front end, Redis master for storage, and replicated set of Redis slaves, all for which we will create Kubernetes replication controllers, pods, and services.
 
-##### Table of Contents
+## Table of Contents
 
- * [Prerequisites](#prerequisites)
- * [Create the Redis master pod](#create-the-redis-master-pod)
- * [Create the Redis master service](#create-the-redis-master-service)
- * [Create the Redis slave pods](#create-the-redis-slave-pods)
- * [Create the Redis slave service](#create-the-redis-slave-service)
- * [Create the guestbook pods](#create-the-guestbook-pods)
- * [Create the guestbook service](#create-the-guestbook-service)
- * [View the guestbook](#view-the-guestbook)
- * [Cleanup](#cleanup)
+* [Prerequisites](#prerequisites)
+* [Create the Redis master pod](#create-the-redis-master-pod)
+* [Create the Redis master service](#create-the-redis-master-service)
+* [Create the Redis slave pods](#create-the-redis-slave-pods)
+* [Create the Redis slave service](#create-the-redis-slave-service)
+* [Create the guestbook pods](#create-the-guestbook-pods)
+* [Create the guestbook service](#create-the-guestbook-service)
+* [View the guestbook](#view-the-guestbook)
+* [Cleanup](#cleanup)
 
 ### Prerequisites
 
@@ -81,7 +81,6 @@ Services find the pods to load balance based on pod labels. The pod that you cre
     ```
 
     Result: All new pods will see the `redis-master` service running on the host (`$REDIS_MASTER_SERVICE_HOST` environment variable) at port `6379`, or running on `redis-master:6379`. After the service is created, the service proxy on each node is configured to set up a proxy on the specified port (in our example, that's port `6379`).
-
 
 ### Create the Redis slave pods
 
@@ -167,7 +166,7 @@ This is a simple Go `net/http` ([negroni](https://github.com/codegangsta/negroni
     deployment.apps "guestbook" created
     ```
 
- Tip: If you want to modify the guestbook code it can be found in the `guestbook` directory, along with its Makefile. If you have pushed your custom image be sure to update the `image` property accordingly in the guestbook-deployment.yaml.
+   Tip: If you want to modify the guestbook code it can be found in the `guestbook` directory, along with its Makefile. If you have pushed your custom image be sure to update the `image` property accordingly in the guestbook-deployment.yaml.
 
 2. To verify that the guestbook deployment is running, run the `kubectl get deploy` command:
 
@@ -201,8 +200,8 @@ Just like the others, we create a service to group the guestbook pods but this t
 
 1. Use the [guestbook-service.yaml](guestbook-service.yaml) file to create the guestbook service by running the `kubectl create -f` *`filename`* command:
 
-    ```console
-    $ kubectl create -f guestbook-service.yaml
+    ```text
+    kubectl create -f guestbook-service.yaml
     ```
 
 2. To verify that the guestbook service is up, list the services you created in the cluster with the `kubectl get services` command:
@@ -222,18 +221,17 @@ Just like the others, we create a service to group the guestbook pods but this t
 
 You can now play with the guestbook that you just created by opening it in a browser (it might take a few moments for the guestbook to come up).
 
- * **Local Host:**
+* **Local Host:**
     If you are running Kubernetes locally, to view the guestbook, navigate to `http://localhost:3000` in your browser.
 
- * **Remote Host:**
+* **Remote Host:**
     1. To view the guestbook on a remote host, locate the external IP of the load balancer in the **IP** column of the `kubectl get services` output. In our example, the internal IP address is `10.0.217.218` and the external IP address is `146.148.81.8` (*Note: you might need to scroll to see the IP column*).
 
     2. Append port `3000` to the IP address (for example `http://146.148.81.8:3000`), and then navigate to that address in your browser.
 
     Result: The guestbook displays in your browser:
 
-    ![Guestbook](../guestbook-page.png)
-
+    ![Guestbook](../images/guestbook-page.png)
 
 ### Cleanup
 
