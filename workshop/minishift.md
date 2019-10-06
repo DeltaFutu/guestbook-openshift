@@ -28,7 +28,12 @@ To create a default size cluster, you can generally use the `minishift start` co
 
 * MacOS: `minishift start --vm-driver=hyperkit`
 
-* Windows 10 (hyper V, static IP on Docker network): `minishift start  --network-ipaddress 10.0.75.128  --network-gateway 10.0.75.1 --network-nameserver 8.8.8.8`
+* Windows 10 (hyper V, static IP on Docker network, adjust according if using a different local NAT network):
+
+    ```text
+    minishift config set hyperv-virtual-switch "DockerNAT"
+    minishift start  --network-ipaddress 10.0.75.128  --network-gateway 10.0.75.1 --network-nameserver 8.8.8.8
+    ```
 
 * Linux: `minishift start`
 
