@@ -104,3 +104,5 @@ ibmcloud-operator-7dd98d9754-lphll   1/1       Running   0          1m
 ## Summary
 
 Your cluster now has the IBM Cloud operator installed. This operator is able to configure two kinds in the cluster, a **Service** and a **Binding**. The **Service** defines a specific IBM Cloud service instance type to create, and the **Binding** specifies a named binding of a service instance to a secret in the cluster. For more details about the IBM Cloud operator see the [project repository](https://github.com/IBM/cloud-operators)
+
+Continue by using the IBM Cloud operator to [Create a Tone Analyzer service on IBM Cloud](create-tone.md)

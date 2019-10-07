@@ -134,3 +134,7 @@ Your cluster is ready to go for the exercises in this guide, but there are some 
 `minishift profile` - allows for the creation of a named profile including a VM and customized configuration
 
 For more information, visit the Minishift documetation [basic usage](https://docs.okd.io/latest/minishift/using/basic-usage.html) pages.
+
+## Continue with setup of the IBM Cloud Operator
+
+Continue the exercise by [setting up the operator framework and IBM Cloud operator](ibm-operator.md)

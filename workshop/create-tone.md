@@ -41,3 +41,7 @@ With the credentials added to the current project, now it is time to deploy the 
 ## Cleaning up and lifecycle management with the IBM Cloud operator
 
 The IBM Cloud operator will monitor the IBM Cloud account service instances. If something happens to the service instance, for example if it is deleted, the operator will create a new service instance and update the credentials stored in the binding secret. When you are finished with the activities in this guide, you can remove the secret and the deployed service instance by just deleting the resources defined by `tone.yaml`
+
+## Continue with deploying the guestbook application
+
+Continue the exercise by [deploying the guestbook application](deploy-guestbook.md)
