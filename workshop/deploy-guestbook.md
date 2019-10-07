@@ -75,7 +75,7 @@ Services find the pods to load balance based on pod labels. The pod that you cre
     services/redis-master
     ```
 
-2. To verify that the redis-master service is up, list the services you created in the cluster with the `kubectl get services` command:
+2. To verify that the redis-master service is up, list the services you created in the cluster with the `oc get services` command:
 
     ```console
     $ oc get services
@@ -124,7 +124,7 @@ The Redis master we created earlier is a single pod (REPLICAS = 1), while the Re
 3. To verify that the Redis master and slaves pods are running, run the `oc get pods` command:
 
     ```console
-    $ kubectl get pods
+    $ oc get pods
     NAME                          READY     STATUS    RESTARTS   AGE
     redis-master-xx4uv            1/1       Running   0          25m
     redis-slave-b6wj4             1/1       Running   0          1m
@@ -283,7 +283,6 @@ Create a service so that the guestbook application can call the analyzer pod
     ```
 
     Result: The service is created
-
 
 ### View the guestbook
 

@@ -23,7 +23,7 @@ Change into the `guestbook-operator` folder and apply the `tone.yaml` file. This
 
 ```bash
 $ cd guestbook-openshift/
-$ kubectl apply -f tone.yaml
+$ oc apply -f tone.yaml
 service.ibmcloud.ibm.com/mytone created
 binding.ibmcloud.ibm.com/binding-tone created
 ```
@@ -31,7 +31,7 @@ binding.ibmcloud.ibm.com/binding-tone created
 Check that there is a secret for the Tone Analyzer service instance added to the current project:
 
 ```bash
-$ kubectl get secret binding-tone
+$ oc get secret binding-tone
 NAME           TYPE      DATA      AGE
 binding-tone   Opaque    6         40s
 ```

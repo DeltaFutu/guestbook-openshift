@@ -11,14 +11,14 @@ The steps in this guide require execution by a user with cluster-admin role. If 
 Begin by applying the Operator Lifecycle Manager (OLM) release to your cluster:
 
 ```text
-kubectl apply -f https://github.com/operator-framework/operator-lifecycle-manager/releases/download/0.10.0/crds.yaml
-kubectl apply -f https://github.com/operator-framework/operator-lifecycle-manager/releases/download/0.10.0/olm.yaml
+oc apply -f https://github.com/operator-framework/operator-lifecycle-manager/releases/download/0.10.0/crds.yaml
+oc apply -f https://github.com/operator-framework/operator-lifecycle-manager/releases/download/0.10.0/olm.yaml
 ```
 
 Before continuing, check to ensure that the pods in the `olm` namespace have started. This can take a few minutes for the container images to be pulled and the pods to start.
 
 ```text
-kubectl get pods --namespace olm
+oc get pods --namespace olm
 NAME                                READY     STATUS    RESTARTS   AGE
 catalog-operator-6bb8ffd7c5-4jwwz   1/1       Running   0          2m
 olm-operator-78ff5d69cf-2ssbs       1/1       Running   0          2m
@@ -32,13 +32,13 @@ Next, to install the Marketplace Operator (allows for adding operators from the 
 
 ```text
 git clone https://github.com/operator-framework/operator-marketplace.git
-kubectl apply -f operator-marketplace/deploy/upstream/
+oc apply -f operator-marketplace/deploy/upstream/
 ```
 
 Now, configure a namespace for the marketplace operators
 
 ```text
-kubectl apply -f - <<END
+oc apply -f - <<END
 apiVersion: operators.coreos.com/v1alpha2
 kind: OperatorGroup
 metadata:
@@ -90,13 +90,13 @@ curl -sL https://raw.githubusercontent.com/IBM/cloud-operators/master/hack/confi
 The operator marketplace catalog provides a URL for the resources to install for each operator. Install the IBM Cloud Operator with the following command:
 
 ```text
-kubectl create -f https://operatorhub.io/install/ibmcloud-operator.yaml
+oc create -f https://operatorhub.io/install/ibmcloud-operator.yaml
 ```
 
 Check that the pod for the IBM Cloud operator is running:
 
 ```bash
-$ kubectl get pods --namespace operators
+$ oc get pods --namespace operators
 NAME                                 READY     STATUS    RESTARTS   AGE
 ibmcloud-operator-7dd98d9754-lphll   1/1       Running   0          1m
 ```

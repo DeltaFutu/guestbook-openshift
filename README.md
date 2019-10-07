@@ -12,10 +12,11 @@ With the credentials for the Tone Analyzer service added to the cluster, you wil
 
 ## Prerequisites
 
-* Workstation (MacOS, Linux or Windows 10) with hypervisor support, either native to the OS or through VirtualBox
-* An [IBM Cloud account](https://cloud.ibm.com/registration) - only a Standard/Lite account is needed
+* Workstation (MacOS, Linux or Windows 10) with hypervisor support, either native to the OS or through VirtualBox.
+* An [IBM Cloud account](https://cloud.ibm.com/registration) - only a Standard/Lite account is needed.
 * For Windows 10, support for a bash shell, for example either by setting up [git bash](https://gitforwindows.org/) or the [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10).
-* Internet connectivity for downloading Minishift and connecting to the IBM Cloud
+* The [IBM Cloud CLI](https://cloud.ibm.com/docs/cli?topic=cloud-cli-install-ibmcloud-cli) installed on your workstation.
+* Internet connectivity for downloading Minishift and connecting to the IBM Cloud.
 * Optional - for building the container images for the guestbook application: [Docker Desktop for Mac and Windows](https://www.docker.com/products/docker-desktop) or Docker for your Linux system, and the `make` utility.
 
 ## Time required
